@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>SmartRH</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{margin:0;font-family:Arial;background:#f4f7fb;}
+header{background:#0f172a;color:white;text-align:center;padding:20px;}
+nav{background:#1d4ed8;text-align:center;padding:10px;}
+nav a{color:white;margin:10px;text-decoration:none;font-weight:bold;}
+nav a:hover{color:#93c5fd;}
+.section{display:none;padding:30px;}
+.active{display:block;}
+.card{background:white;margin:15px 0;padding:20px;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+h2{color:#1d4ed8;}
+footer{background:#0f172a;color:white;text-align:center;padding:15px;margin-top:20px;}
+button{background:#1d4ed8;color:white;border:none;padding:10px 15px;border-radius:6px;cursor:pointer;}
+button:hover{background:#2563eb;}
+input,textarea{width:100%;padding:10px;margin:5px 0;border:1px solid #ccc;border-radius:6px;}
+.hero{background:linear-gradient(to right,#1d4ed8,#22c55e);color:white;padding:50px;text-align:center;}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>SmartRH</h1>
+<p>Référence RH au Maroc et à l’international</p>
+</header>
+
+<nav>
+<a onclick="show('home')">Accueil</a>
+<a onclick="show('droit')">Droit du Travail</a>
+<a onclick="show('actus')">Actualités</a>
+<a onclick="show('docs')">Documents</a>
+<a onclick="show('formations')">Formations</a>
+<a onclick="show('faq')">FAQ</a>
+<a onclick="show('contact')">Contact</a>
+<a onclick="show('apropos')">À propos</a>
+</nav>
+
+<!-- ACCUEIL -->
+<div id="home" class="section active">
+<div class="hero">
+<h2>Bienvenue sur SmartRH</h2>
+<p>Votre portail d’informations et d’outils Ressources Humaines</p>
+</div>
+
+<div class="card">
+<h3>Notre mission</h3>
+<p>SmartRH vous accompagne avec des guides pratiques, des modèles de documents et des conseils professionnels pour simplifier la gestion RH.</p>
+</div>
+</div>
+
+<!-- DROIT -->
+<div id="droit" class="section">
+<div class="card">
+<h2>Droit du Travail</h2>
+<ul>
+<li>Contrats de travail</li>
+<li>Congés et absences</li>
+<li>Licenciement et démission</li>
+<li>Paie et obligations légales</li>
+</ul>
+</div>
+</div>
+
+<!-- ACTUS -->
+<div id="actus" class="section">
+<div class="card">
+<h2>Actualités RH</h2>
+<p>Retrouvez les dernières informations RH, réformes, conseils professionnels et tendances du marché du travail.</p>
+</div>
+</div>
+
+<!-- DOCS -->
+<div id="docs" class="section">
+<div class="card">
+<h2>Documents RH</h2>
+<ul>
+<li>Contrat de travail</li>
+<li>Attestation de travail</li>
+<li>Lettre d’avertissement</li>
+<li>Lettre de démission</li>
+<li>Demande de congé</li>
+</ul>
+<button onclick="alert('Téléchargement à configurer')">Télécharger un modèle</button>
+</div>
+</div>
+
+<!-- FORMATIONS -->
+<div id="formations" class="section">
+<div class="card">
+<h2>Formations RH</h2>
+<ul>
+<li>Gestion paie</li>
+<li>Recrutement</li>
+<li>Management</li>
+<li>Communication professionnelle</li>
+</ul>
+</div>
+</div>
+
+<!-- FAQ -->
+<div id="faq" class="section">
+<div class="card">
+<h2>Questions fréquentes</h2>
+<p><b>Comment calculer un solde de tout compte ?</b><br>Il comprend les salaires restants, congés payés et indemnités.</p>
+<p><b>Quels sont les types de contrats ?</b><br>CDI, CDD, intérim, stage.</p>
+<p><b>Comment gérer une absence injustifiée ?</b><br>Envoyer une demande de justification écrite.</p>
+</div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="section">
+<div class="card">
+<h2>Contactez-nous</h2>
+<input placeholder="Nom">
+<input placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button onclick="alert('Message envoyé ✔')">Envoyer</button>
+</div>
+</div>
+
+<!-- A PROPOS -->
+<div id="apropos" class="section">
+<div class="card">
+<h2>À propos de SmartRH</h2>
+<p>SmartRH est une plateforme dédiée au partage du savoir RH pour les professionnels, entreprises et candidats. Notre objectif est de rendre l’information RH accessible, fiable et pratique.</p>
+</div>
+</div>
+
+<footer>
+© 2026 SmartRH — Tous droits réservés
+</footer>
+
+<script>
+function show(id){
+document.querySelectorAll(".section").forEach(sec=>sec.classList.remove("active"));
+document.getElementById(id).classList.add("active");
+}
+</script>
+
+</body>
+</html>
