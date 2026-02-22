@@ -4,32 +4,67 @@
 <meta charset="UTF-8">
 <title>SmartRH</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-body{margin:0;font-family:Arial;background:#f4f7fb;}
-header{background:#0f172a;color:white;text-align:center;padding:20px;}
-nav{background:#1d4ed8;text-align:center;padding:10px;}
-nav a{color:white;margin:10px;text-decoration:none;font-weight:bold;}
+/* Reset & body */
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;}
+a{text-decoration:none;}
+/* Header sticky */
+header{background:#0f172a;color:white;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+header img{height:60px;}
+nav{display:flex;gap:15px;flex-wrap:wrap;}
+nav a{color:white;font-weight:bold;padding:8px;}
 nav a:hover{color:#93c5fd;}
-.section{display:none;padding:30px;}
+
+/* Hero section */
+.hero{
+background-image:url('images/cover.png');
+background-size:cover;
+background-position:center;
+color:white;
+padding:120px 20px;
+text-align:center;
+position:relative;
+}
+.hero button{
+background:#2563eb;
+border:none;
+color:white;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+margin-top:20px;
+}
+.hero button:hover{background:#1d4ed8;}
+
+/* Sections */
+.section{display:none;padding:40px 20px;max-width:1000px;margin:auto;}
 .active{display:block;}
-.card{background:white;margin:15px 0;padding:20px;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+.card{background:white;margin:20px 0;padding:25px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
 h2{color:#1d4ed8;}
-footer{background:#0f172a;color:white;text-align:center;padding:15px;margin-top:20px;}
-button{background:#1d4ed8;color:white;border:none;padding:10px 15px;border-radius:6px;cursor:pointer;}
-button:hover{background:#2563eb;}
-input,textarea{width:100%;padding:10px;margin:5px 0;border:1px solid #ccc;border-radius:6px;}
-.hero{background:linear-gradient(to right,#1d4ed8,#22c55e);color:white;padding:50px;text-align:center;}
+
+/* Forms */
+input,textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px;}
+button.submit{background:#1d4ed8;color:white;border:none;padding:12px 20px;border-radius:8px;cursor:pointer;}
+button.submit:hover{background:#2563eb;}
+
+/* Footer */
+footer{background:#0f172a;color:white;text-align:center;padding:20px;margin-top:30px;}
+
+/* Responsive menu */
+@media(max-width:768px){
+nav{flex-direction:column;align-items:center;}
+.hero{padding:80px 20px;}
+}
 </style>
 </head>
-
 <body>
 
 <header>
+<div style="display:flex;align-items:center;gap:20px;">
+<img src="images/logo.png" alt="SmartRH Logo">
 <h1>SmartRH</h1>
-<p>Référence RH au Maroc et à l’international</p>
-</header>
-
+</div>
 <nav>
 <a onclick="show('home')">Accueil</a>
 <a onclick="show('droit')">Droit du Travail</a>
@@ -40,14 +75,15 @@ input,textarea{width:100%;padding:10px;margin:5px 0;border:1px solid #ccc;border
 <a onclick="show('contact')">Contact</a>
 <a onclick="show('apropos')">À propos</a>
 </nav>
+</header>
 
-<!-- ACCUEIL -->
+<!-- Hero + Accueil -->
 <div id="home" class="section active">
 <div class="hero">
 <h2>Bienvenue sur SmartRH</h2>
 <p>Votre portail d’informations et d’outils Ressources Humaines</p>
+<button onclick="show('docs')">Découvrir</button>
 </div>
-
 <div class="card">
 <h3>Notre mission</h3>
 <p>SmartRH vous accompagne avec des guides pratiques, des modèles de documents et des conseils professionnels pour simplifier la gestion RH.</p>
@@ -86,7 +122,7 @@ input,textarea{width:100%;padding:10px;margin:5px 0;border:1px solid #ccc;border
 <li>Lettre de démission</li>
 <li>Demande de congé</li>
 </ul>
-<button onclick="alert('Téléchargement à configurer')">Télécharger un modèle</button>
+<button class="submit" onclick="alert('Téléchargement à configurer')">Télécharger un modèle</button>
 </div>
 </div>
 
@@ -120,7 +156,7 @@ input,textarea{width:100%;padding:10px;margin:5px 0;border:1px solid #ccc;border
 <input placeholder="Nom">
 <input placeholder="Email">
 <textarea placeholder="Message"></textarea>
-<button onclick="alert('Message envoyé ✔')">Envoyer</button>
+<button class="submit" onclick="alert('Message envoyé ✔')">Envoyer</button>
 </div>
 </div>
 
