@@ -5,6 +5,390 @@
 <title>SmartRH</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+/* RESET & BODY */
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;}
+a{text-decoration:none;}
+/* HEADER STICKY */
+header{background:#0f172a;color:white;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+header img{height:60px;}
+nav{display:flex;gap:15px;flex-wrap:wrap;}
+nav a{color:white;font-weight:bold;padding:8px;}
+nav a:hover{color:#93c5fd;}
+
+/* HERO */
+.hero{
+background-image:url('images/cover.png');
+background-size:cover;
+background-position:center;
+color:white;
+padding:120px 20px;
+text-align:center;
+position:relative;
+border-radius:10px;
+}
+.hero button{
+background:#2563eb;
+border:none;
+color:white;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+margin-top:20px;
+transition:0.3s;
+}
+.hero button:hover{background:#1d4ed8;}
+
+/* SECTIONS */
+.section{display:none;padding:40px 20px;max-width:1000px;margin:auto;}
+.active{display:block;}
+.card{background:white;margin:20px 0;padding:25px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+h2{color:#1d4ed8;}
+
+/* FORMULAIRES */
+input,textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px;}
+button.submit{background:#1d4ed8;color:white;border:none;padding:12px 20px;border-radius:8px;cursor:pointer;transition:0.3s;}
+button.submit:hover{background:#2563eb;}
+
+/* FOOTER */
+footer{background:#0f172a;color:white;text-align:center;padding:20px;margin-top:30px;border-top:2px solid #1d4ed8;}
+
+/* RESPONSIVE MENU */
+@media(max-width:768px){
+nav{flex-direction:column;align-items:center;}
+.hero{padding:80px 20px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div style="display:flex;align-items:center;gap:20px;">
+<img src="images/logo.png" alt="SmartRH Logo">
+<h1>SmartRH</h1>
+</div>
+<nav>
+<a onclick="show('home')">Accueil</a>
+<a onclick="show('droit')">Droit du Travail</a>
+<a onclick="show('actus')">Actualités</a>
+<a onclick="show('docs')">Documents</a>
+<a onclick="show('formations')">Formations</a>
+<a onclick="show('faq')">FAQ</a>
+<a onclick="show('contact')">Contact</a>
+<a onclick="show('apropos')">À propos</a>
+</nav>
+</header>
+
+<!-- HERO + ACCUEIL -->
+<div id="home" class="section active">
+<div class="hero">
+<h2>Bienvenue sur SmartRH</h2>
+<p>Votre portail d’informations et d’outils Ressources Humaines</p>
+<button onclick="show('docs')">Découvrir</button>
+</div>
+<div class="card">
+<h3>Notre mission</h3>
+<p>SmartRH vous accompagne avec des guides pratiques, des modèles de documents et des conseils professionnels pour simplifier la gestion RH.</p>
+</div>
+</div>
+
+<!-- DROIT -->
+<div id="droit" class="section">
+<div class="card">
+<h2>Droit du Travail</h2>
+<ul>
+<li>Contrats de travail</li>
+<li>Congés et absences</li>
+<li>Licenciement et démission</li>
+<li>Paie et obligations légales</li>
+</ul>
+</div>
+</div>
+
+<!-- ACTUS -->
+<div id="actus" class="section">
+<div class="card">
+<h2>Actualités RH</h2>
+<p>Retrouvez les dernières informations RH, réformes, conseils professionnels et tendances du marché du travail.</p>
+</div>
+</div>
+
+<!-- DOCS -->
+<div id="docs" class="section">
+<div class="card">
+<h2>Documents RH</h2>
+<ul>
+<li>Contrat de travail</li>
+<li>Attestation de travail</li>
+<li>Lettre d’avertissement</li>
+<li>Lettre de démission</li>
+<li>Demande de congé</li>
+</ul>
+<button class="submit" onclick="alert('Téléchargement à configurer')">Télécharger un modèle</button>
+</div>
+</div>
+
+<!-- FORMATIONS -->
+<div id="formations" class="section">
+<div class="card">
+<h2>Formations RH</h2>
+<ul>
+<li>Gestion paie</li>
+<li>Recrutement</li>
+<li>Management</li>
+<li>Communication professionnelle</li>
+</ul>
+</div>
+</div>
+
+<!-- FAQ -->
+<div id="faq" class="section">
+<div class="card">
+<h2>Questions fréquentes</h2>
+<p><b>Comment calculer un solde de tout compte ?</b><br>Il comprend les salaires restants, congés payés et indemnités.</p>
+<p><b>Quels sont les types de contrats ?</b><br>CDI, CDD, intérim, stage.</p>
+<p><b>Comment gérer une absence injustifiée ?</b><br>Envoyer une demande de justification écrite.</p>
+</div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="section">
+<div class="card">
+<h2>Contactez-nous</h2>
+<input placeholder="Nom">
+<input placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button class="submit" onclick="alert('Message envoyé ✔')">Envoyer</button>
+</div>
+</div>
+
+<!-- A PROPOS -->
+<div id="apropos" class="section">
+<div class="card">
+<h2>À propos de SmartRH</h2>
+<p>SmartRH est une plateforme dédiée au partage du savoir RH pour les professionnels, entreprises et candidats. Notre objectif est de rendre l’information RH accessible, fiable et pratique.</p>
+</div>
+</div>
+
+<footer>
+© 2026 SmartRH — Tous droits réservés
+</footer>
+
+<script>
+function show(id){
+document.querySelectorAll(".section").forEach(sec=>sec.classList.remove("active"));
+document.getElementById(id).classList.add("active");
+}
+</script>
+
+</body>
+</html>
+
+Envoyé à partir de Outlook pour Android
+From: DAIMOUNE MOHAMED <m.daimoune@srm-dt.ma>
+Sent: Sunday, February 22, 2026 3:37:35 AM
+To: DAIMOUNE MOHAMED <m.daimoune@srm-dt.ma>
+Subject: Re:
+ 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>SmartRH</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* RESET & BODY */
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;}
+a{text-decoration:none;}
+/* HEADER STICKY */
+header{background:#0f172a;color:white;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+header img{height:60px;}
+nav{display:flex;gap:15px;flex-wrap:wrap;}
+nav a{color:white;font-weight:bold;padding:8px;}
+nav a:hover{color:#93c5fd;}
+
+/* HERO */
+.hero{
+background-image:url('images/cover.png');
+background-size:cover;
+background-position:center;
+color:white;
+padding:120px 20px;
+text-align:center;
+position:relative;
+border-radius:10px;
+}
+.hero button{
+background:#2563eb;
+border:none;
+color:white;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+margin-top:20px;
+transition:0.3s;
+}
+.hero button:hover{background:#1d4ed8;}
+
+/* SECTIONS */
+.section{display:none;padding:40px 20px;max-width:1000px;margin:auto;}
+.active{display:block;}
+.card{background:white;margin:20px 0;padding:25px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+h2{color:#1d4ed8;}
+
+/* FORMULAIRES */
+input,textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px;}
+button.submit{background:#1d4ed8;color:white;border:none;padding:12px 20px;border-radius:8px;cursor:pointer;transition:0.3s;}
+button.submit:hover{background:#2563eb;}
+
+/* FOOTER */
+footer{background:#0f172a;color:white;text-align:center;padding:20px;margin-top:30px;border-top:2px solid #1d4ed8;}
+
+/* RESPONSIVE MENU */
+@media(max-width:768px){
+nav{flex-direction:column;align-items:center;}
+.hero{padding:80px 20px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div style="display:flex;align-items:center;gap:20px;">
+<img src="images/logo.png" alt="SmartRH Logo">
+<h1>SmartRH</h1>
+</div>
+<nav>
+<a onclick="show('home')">Accueil</a>
+<a onclick="show('droit')">Droit du Travail</a>
+<a onclick="show('actus')">Actualités</a>
+<a onclick="show('docs')">Documents</a>
+<a onclick="show('formations')">Formations</a>
+<a onclick="show('faq')">FAQ</a>
+<a onclick="show('contact')">Contact</a>
+<a onclick="show('apropos')">À propos</a>
+</nav>
+</header>
+
+<!-- HERO + ACCUEIL -->
+<div id="home" class="section active">
+<div class="hero">
+<h2>Bienvenue sur SmartRH</h2>
+<p>Votre portail d’informations et d’outils Ressources Humaines</p>
+<button onclick="show('docs')">Découvrir</button>
+</div>
+<div class="card">
+<h3>Notre mission</h3>
+<p>SmartRH vous accompagne avec des guides pratiques, des modèles de documents et des conseils professionnels pour simplifier la gestion RH.</p>
+</div>
+</div>
+
+<!-- DROIT -->
+<div id="droit" class="section">
+<div class="card">
+<h2>Droit du Travail</h2>
+<ul>
+<li>Contrats de travail</li>
+<li>Congés et absences</li>
+<li>Licenciement et démission</li>
+<li>Paie et obligations légales</li>
+</ul>
+</div>
+</div>
+
+<!-- ACTUS -->
+<div id="actus" class="section">
+<div class="card">
+<h2>Actualités RH</h2>
+<p>Retrouvez les dernières informations RH, réformes, conseils professionnels et tendances du marché du travail.</p>
+</div>
+</div>
+
+<!-- DOCS -->
+<div id="docs" class="section">
+<div class="card">
+<h2>Documents RH</h2>
+<ul>
+<li>Contrat de travail</li>
+<li>Attestation de travail</li>
+<li>Lettre d’avertissement</li>
+<li>Lettre de démission</li>
+<li>Demande de congé</li>
+</ul>
+<button class="submit" onclick="alert('Téléchargement à configurer')">Télécharger un modèle</button>
+</div>
+</div>
+
+<!-- FORMATIONS -->
+<div id="formations" class="section">
+<div class="card">
+<h2>Formations RH</h2>
+<ul>
+<li>Gestion paie</li>
+<li>Recrutement</li>
+<li>Management</li>
+<li>Communication professionnelle</li>
+</ul>
+</div>
+</div>
+
+<!-- FAQ -->
+<div id="faq" class="section">
+<div class="card">
+<h2>Questions fréquentes</h2>
+<p><b>Comment calculer un solde de tout compte ?</b><br>Il comprend les salaires restants, congés payés et indemnités.</p>
+<p><b>Quels sont les types de contrats ?</b><br>CDI, CDD, intérim, stage.</p>
+<p><b>Comment gérer une absence injustifiée ?</b><br>Envoyer une demande de justification écrite.</p>
+</div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="section">
+<div class="card">
+<h2>Contactez-nous</h2>
+<input placeholder="Nom">
+<input placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button class="submit" onclick="alert('Message envoyé ✔')">Envoyer</button>
+</div>
+</div>
+
+<!-- A PROPOS -->
+<div id="apropos" class="section">
+<div class="card">
+<h2>À propos de SmartRH</h2>
+<p>SmartRH est une plateforme dédiée au partage du savoir RH pour les professionnels, entreprises et candidats. Notre objectif est de rendre l’information RH accessible, fiable et pratique.</p>
+</div>
+</div>
+
+<footer>
+© 2026 SmartRH — Tous droits réservés
+</footer>
+
+<script>
+function show(id){
+document.querySelectorAll(".section").forEach(sec=>sec.classList.remove("active"));
+document.getElementById(id).classList.add("active");
+}
+</script>
+
+</body>
+</html>
+
+Envoyé à partir de Outlook pour Android
+From: DAIMOUNE MOHAMED <m.daimoune@srm-dt.ma>
+Sent: Sunday, February 22, 2026 3:19:13 AM
+To: Daimoune Mohamed <daimoune@gmail.com>
+Subject: Re:
+ 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>SmartRH</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
 /* Reset & body */
 body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;}
 a{text-decoration:none;}
@@ -155,29 +539,5 @@ nav{flex-direction:column;align-items:center;}
 <h2>Contactez-nous</h2>
 <input placeholder="Nom">
 <input placeholder="Email">
-<textarea placeholder="Message"></textarea>
-<button class="submit" onclick="alert('Message envoyé ✔')">Envoyer</button>
-</div>
-</div>
-
-<!-- A PROPOS -->
-<div id="apropos" class="section">
-<div class="card">
-<h2>À propos de SmartRH</h2>
-<p>SmartRH est une plateforme dédiée au partage du savoir RH pour les professionnels, entreprises et candidats. Notre objectif est de rendre l’information RH accessible, fiable et pratique.</p>
-</div>
-</div>
-
-<footer>
-© 2026 SmartRH — Tous droits réservés
-</footer>
-
-<script>
-function show(id){
-document.querySelectorAll(".section").forEach(sec=>sec.classList.remove("active"));
-document.getElementById(id).classList.add("active");
-}
-</script>
-
-</body>
-</html>
+<textarea placeholder="Message"></
+…
